@@ -1,0 +1,53 @@
+%{!?upstream_version: %global upstream_version %{version}}
+
+%global srcname ironic-lib
+%global sum A common library to be used by various projects in the Ironic ecosystem
+
+Name:           python-%{srcname}
+Version:        XXX
+Release:        XXX
+Summary:        %{sum}
+
+License:        ASL 2.0
+URL:            http://pypi.python.org/pypi/%{srcname}
+Source0:        http://pypi.python.org/packages/source/e/%{srcname}/%{srcname}-%{version}.tar.gz
+
+BuildArch:      noarch
+
+BuildRequires:  python-devel
+Requires: python-pbr
+Requires: python-argparse
+Requires: python-eventlet
+Requires: python-greenlet
+Requires: python-jinja2
+Requires: python-oslo-concurrency
+Requires: python-oslo-config
+Requires: python-oslo-i18n
+Requires: python-oslo-log
+Requires: python-oslo-middleware
+Requires: python-oslo-serialization
+Requires: python-oslo-service
+Requires: python-oslo-utils
+Requires: python-prettytable
+Requires: python-psutil
+Requires: python-requests
+Requires: python-six
+
+%description
+A common library to be used by various projects in the Ironic ecosystem
+
+%prep
+%autosetup -n %{srcname}-%{upstream_version}
+
+%build
+%{__python2} setup.py build
+
+%install
+%{__python2} setup.py install -O1 --skip-build --root=%{buildroot}
+
+%files
+%license LICENSE
+%doc README.rst
+%{python2_sitelib}/*
+
+%changelog
