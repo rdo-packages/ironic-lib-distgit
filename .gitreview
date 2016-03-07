@@ -1,5 +1,5 @@
 [gerrit]
 host=review.gerrithub.io
 port=29418
-project=openstack-packages/ironic-lib
+project=openstack-packages/python-ironic-lib
 defaultbranch=rpm-master
