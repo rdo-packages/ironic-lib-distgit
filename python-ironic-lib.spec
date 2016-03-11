@@ -16,6 +16,7 @@ BuildArch:      noarch
 
 BuildRequires:  python-devel
 BuildRequires:  python-pbr
+BuildRequires:  python-setuptools
 Requires: python-oslo-concurrency
 Requires: python-oslo-config
 Requires: python-oslo-i18n
