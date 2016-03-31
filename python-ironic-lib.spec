@@ -4,13 +4,13 @@
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
 Name:           python-%{srcname}
-Version:        XXX
-Release:        XXX
+Version:        1.1.0
+Release:        1%{?dist}
 Summary:        %{sum}
 
 License:        ASL 2.0
 URL:            http://pypi.python.org/pypi/%{srcname}
-Source0:        http://pypi.python.org/packages/source/e/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0:        http://pypi.python.org/packages/source/e/%{srcname}/%{srcname}-%{version}%{?milestone}.tar.gz
 
 BuildArch:      noarch
 
@@ -60,3 +60,5 @@ A common library to be used by various projects in the Ironic ecosystem
 %{python2_sitelib}/*
 
 %changelog
+* Thu Mar 31 2016 RDO <rdo-list@redhat.com> 1.1.0-1
+- RC1 Rebuild for Mitaka RC1 
