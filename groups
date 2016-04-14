@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-f7d939058253c141fc0315fa0f5899950d7946da       	ironic-lib-distgit-core
-dc9e7bfb2db608a33411b4b9af535ff413b7820b        	ironic-lib-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+dc9e7bfb2db608a33411b4b9af535ff413b7820b	openstack/ironic-lib-distgit-ptl
+f7d939058253c141fc0315fa0f5899950d7946da	ironic-lib-distgit-core
+global:Registered-Users                 	Registered Users
