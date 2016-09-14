@@ -4,7 +4,7 @@
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
 Name:           python-%{srcname}
-Version:        1.1.0
+Version:        1.2.0
 Release:        1%{?dist}
 Summary:        %{sum}
 
@@ -60,5 +60,8 @@ A common library to be used by various projects in the Ironic ecosystem
 %{python2_sitelib}/*
 
 %changelog
+* Wed Sep 14 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.2.0-1
+- Update to 1.2.0
+
 * Thu Mar 31 2016 RDO <rdo-list@redhat.com> 1.1.0-1
 - RC1 Rebuild for Mitaka RC1 
