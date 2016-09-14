@@ -10,7 +10,7 @@ Summary:        %{sum}
 
 License:        ASL 2.0
 URL:            http://pypi.python.org/pypi/%{srcname}
-Source0:        http://pypi.python.org/packages/source/e/%{srcname}/%{srcname}-%{version}%{?milestone}.tar.gz
+Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{version}.tar.gz
 
 BuildArch:      noarch
 
