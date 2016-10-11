@@ -4,7 +4,7 @@
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
 Name:           python-%{srcname}
-Version:        2.1.0
+Version:        2.1.1
 Release:        1%{?dist}
 Summary:        %{sum}
 
@@ -60,6 +60,9 @@ A common library to be used by various projects in the Ironic ecosystem
 %{python2_sitelib}/*
 
 %changelog
+* Tue Oct 11 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.1.1-1
+- Update to 2.1.1
+
 * Wed Sep 14 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.1.0-1
 - Update to 2.1.0
 
