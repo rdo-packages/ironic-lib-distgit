@@ -43,7 +43,7 @@ BuildRequires: python-testtools
 A common library to be used by various projects in the Ironic ecosystem
 
 %prep
-%autosetup -n %{srcname}-%{upstream_version}
+%autosetup -n %{srcname}-%{upstream_version} -p1
 
 %build
 %{__python2} setup.py build
