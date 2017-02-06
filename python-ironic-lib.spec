@@ -17,12 +17,14 @@ BuildArch:      noarch
 BuildRequires:  python-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
-Requires: python-oslo-concurrency
-Requires: python-oslo-config
-Requires: python-oslo-i18n
-Requires: python-oslo-log
-Requires: python-oslo-service
-Requires: python-oslo-utils
+Requires: python-oslo-concurrency >= 3.8.0
+Requires: python-oslo-config >= 2:3.14.0
+Requires: python-oslo-i18n >= 2.1.0
+Requires: python-oslo-log >= 3.11.0
+Requires: python-oslo-serialization >= 1.10.0
+Requires: python-oslo-service >= 1.10.0
+Requires: python-oslo-utils >= 3.18.0
+Requires: python-pbr
 Requires: python-requests
 Requires: python-six
 
