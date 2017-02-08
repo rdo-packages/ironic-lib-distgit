@@ -4,8 +4,8 @@
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
 Name:           python-%{srcname}
-Version:        XXX
-Release:        XXX
+Version:        2.5.2
+Release:        1%{?dist}
 Summary:        %{sum}
 
 License:        ASL 2.0
@@ -62,3 +62,6 @@ A common library to be used by various projects in the Ironic ecosystem
 %{python2_sitelib}/*
 
 %changelog
+* Wed Feb 08 2017 Alfredo Moralejo <amoralej@redhat.com> 2.5.2-1
+- Update to 2.5.2
+
