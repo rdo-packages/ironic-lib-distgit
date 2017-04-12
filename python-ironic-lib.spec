@@ -62,3 +62,4 @@ A common library to be used by various projects in the Ironic ecosystem
 %{python2_sitelib}/*
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/ironic-lib/commit/?id=8c1bad5d77dcb0cd7ee4b103feb2353a563c8338
