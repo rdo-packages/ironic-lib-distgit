@@ -17,6 +17,7 @@ BuildArch:      noarch
 BuildRequires:  python-devel
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
+BuildRequires:  openstack-macros
 Requires: python-oslo-concurrency >= 3.8.0
 Requires: python-oslo-config >= 2:4.0.0
 Requires: python-oslo-i18n >= 2.1.0
@@ -46,6 +47,7 @@ A common library to be used by various projects in the Ironic ecosystem
 
 %prep
 %autosetup -n %{srcname}-%{upstream_version} -p1
+%py_req_cleanup
 
 %build
 %{__python2} setup.py build
