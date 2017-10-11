@@ -46,6 +46,8 @@ A common library to be used by various projects in the Ironic ecosystem
 
 %prep
 %autosetup -n %{srcname}-%{upstream_version} -p1
+# Do not use requirements from tarball, let RPM handle them
+rm -rf *requirements.txt
 
 %build
 %{__python2} setup.py build
