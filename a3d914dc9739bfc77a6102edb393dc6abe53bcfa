@@ -22,6 +22,30 @@
       "revId": "a3d914dc9739bfc77a6102edb393dc6abe53bcfa",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fa81d914_98577702",
+        "filename": "python-ironic-lib.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-10-11T07:57:33Z",
+      "side": 1,
+      "message": "I thought it was included in Fedora packaging, and in that case it is preferred not to use the macro. However, it is not, so I\u0027ll update the review.",
+      "parentUuid": "fa81d914_38312bed",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 24
+      },
+      "revId": "a3d914dc9739bfc77a6102edb393dc6abe53bcfa",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
