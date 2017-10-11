@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa81d914_38312bed",
+        "filename": "python-ironic-lib.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2017-10-11T07:54:02Z",
+      "side": 1,
+      "message": "can\u0027t we use py_req_cleanup from openstack-macros here?",
+      "range": {
+        "startLine": 50,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 24
+      },
+      "revId": "a3d914dc9739bfc77a6102edb393dc6abe53bcfa",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
