@@ -1,0 +1,10 @@
+Code-Review+1: Yatin Karel <ykarel@redhat.com>
+Code-Review+2: dtantsur <divius.inside@gmail.com>
+Code-Review+2: hguemar <hguemar@fedoraproject.org>
+Workflow+1: hguemar <hguemar@fedoraproject.org>
+Verified+2: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-by: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-at: Fri, 13 Oct 2017 11:50:21 +0000
+Reviewed-on: https://review.rdoproject.org/r/10015
+Project: openstack/ironic-lib-distgit
+Branch: refs/heads/rpm-master
