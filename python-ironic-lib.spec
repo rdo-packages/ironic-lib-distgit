@@ -14,33 +14,33 @@ Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{version}.
 
 BuildArch:      noarch
 
-BuildRequires:  python-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
+BuildRequires:  python2-devel
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
 BuildRequires:  openstack-macros
-Requires: python-oslo-concurrency >= 3.8.0
-Requires: python-oslo-config >= 2:4.0.0
-Requires: python-oslo-i18n >= 2.1.0
-Requires: python-oslo-log >= 3.22.0
-Requires: python-oslo-serialization >= 1.10.0
-Requires: python-oslo-service >= 1.10.0
-Requires: python-oslo-utils >= 3.20.0
-Requires: python-pbr
-Requires: python-requests
-Requires: python-six
+Requires: python2-oslo-concurrency >= 3.25.0
+Requires: python2-oslo-config >= 2:5.1.0
+Requires: python2-oslo-i18n >= 3.15.3
+Requires: python2-oslo-log >= 3.36.0
+Requires: python2-oslo-serialization >= 2.18.0
+Requires: python2-oslo-service >= 1.24.0
+Requires: python2-oslo-utils >= 3.33.0
+Requires: python2-pbr
+Requires: python2-requests
+Requires: python2-six
 
 # These are requirements for unit testing
-BuildRequires: python-eventlet
-BuildRequires: python-oslo-concurrency
-BuildRequires: python-oslo-config
-BuildRequires: python-oslo-i18n
-BuildRequires: python-oslo-log
-BuildRequires: python-oslo-service
-BuildRequires: python-oslo-utils
-BuildRequires: python-oslotest
-BuildRequires: python-requests
-BuildRequires: python-six
-BuildRequires: python-testtools
+BuildRequires: python2-eventlet
+BuildRequires: python2-oslo-concurrency
+BuildRequires: python2-oslo-config
+BuildRequires: python2-oslo-i18n
+BuildRequires: python2-oslo-log
+BuildRequires: python2-oslo-service
+BuildRequires: python2-oslo-utils
+BuildRequires: python2-oslotest
+BuildRequires: python2-requests
+BuildRequires: python2-six
+BuildRequires: python2-testtools
 
 %description
 A common library to be used by various projects in the Ironic ecosystem
