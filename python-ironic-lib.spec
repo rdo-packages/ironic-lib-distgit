@@ -18,8 +18,8 @@ BuildRequires:  python2-devel
 BuildRequires:  python2-pbr
 BuildRequires:  python2-setuptools
 BuildRequires:  openstack-macros
-Requires: python2-oslo-concurrency >= 3.25.0
-Requires: python2-oslo-config >= 2:5.1.0
+Requires: python2-oslo-concurrency >= 3.26.0
+Requires: python2-oslo-config >= 2:5.2.0
 Requires: python2-oslo-i18n >= 3.15.3
 Requires: python2-oslo-log >= 3.36.0
 Requires: python2-oslo-serialization >= 2.18.0
