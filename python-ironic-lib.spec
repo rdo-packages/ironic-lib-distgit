@@ -15,8 +15,7 @@
 %global srcname ironic-lib
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
-Name:           python%{pyver}-%{srcname}
-%{?python_provide:%python_provide python%{pyver}-%{srcname}}
+Name:           python-%{srcname}
 Version:        XXX
 Release:        XXX
 Summary:        %{sum}
@@ -26,6 +25,13 @@ URL:            http://pypi.python.org/pypi/%{srcname}
 Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{version}.tar.gz
 
 BuildArch:      noarch
+
+%description
+A common library to be used by various projects in the Ironic ecosystem
+
+%package -n     python%{pyver}-%{srcname}
+Summary:        %{sum}
+%{?python_provide:%python_provide python%{pyver}-%{srcname}}
 
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
@@ -55,7 +61,7 @@ BuildRequires: python%{pyver}-requests
 BuildRequires: python%{pyver}-six
 BuildRequires: python%{pyver}-testtools
 
-%description
+%description -n python%{pyver}-%{srcname}
 A common library to be used by various projects in the Ironic ecosystem
 
 %prep
@@ -71,7 +77,7 @@ A common library to be used by various projects in the Ironic ecosystem
 %install
 %{pyver_install}
 
-%files
+%files -n python%{pyver}-%{srcname}
 %license LICENSE
 %doc README.rst
 %{pyver_sitelib}/*
