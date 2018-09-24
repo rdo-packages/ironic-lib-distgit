@@ -1,9 +1,22 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}}
 
 %global srcname ironic-lib
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
-Name:           python-%{srcname}
+Name:           python%{pyver}-%{srcname}
+%{?python_provide:%python_provide python%{pyver}-%{srcname}}
 Version:        XXX
 Release:        XXX
 Summary:        %{sum}
@@ -14,33 +27,33 @@ Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{version}.
 
 BuildArch:      noarch
 
-BuildRequires:  python2-devel
-BuildRequires:  python2-pbr
-BuildRequires:  python2-setuptools
+BuildRequires:  python%{pyver}-devel
+BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python%{pyver}-setuptools
 BuildRequires:  openstack-macros
-Requires: python2-oslo-concurrency >= 3.26.0
-Requires: python2-oslo-config >= 2:5.2.0
-Requires: python2-oslo-i18n >= 3.15.3
-Requires: python2-oslo-log >= 3.36.0
-Requires: python2-oslo-serialization >= 2.18.0
-Requires: python2-oslo-service >= 1.24.0
-Requires: python2-oslo-utils >= 3.33.0
-Requires: python2-pbr
-Requires: python2-requests
-Requires: python2-six
+Requires: python%{pyver}-oslo-concurrency >= 3.26.0
+Requires: python%{pyver}-oslo-config >= 2:5.2.0
+Requires: python%{pyver}-oslo-i18n >= 3.15.3
+Requires: python%{pyver}-oslo-log >= 3.36.0
+Requires: python%{pyver}-oslo-serialization >= 2.18.0
+Requires: python%{pyver}-oslo-service >= 1.24.0
+Requires: python%{pyver}-oslo-utils >= 3.33.0
+Requires: python%{pyver}-pbr
+Requires: python%{pyver}-requests
+Requires: python%{pyver}-six
 
 # These are requirements for unit testing
-BuildRequires: python2-eventlet
-BuildRequires: python2-oslo-concurrency
-BuildRequires: python2-oslo-config
-BuildRequires: python2-oslo-i18n
-BuildRequires: python2-oslo-log
-BuildRequires: python2-oslo-service
-BuildRequires: python2-oslo-utils
-BuildRequires: python2-oslotest
-BuildRequires: python2-requests
-BuildRequires: python2-six
-BuildRequires: python2-testtools
+BuildRequires: python%{pyver}-eventlet
+BuildRequires: python%{pyver}-oslo-concurrency
+BuildRequires: python%{pyver}-oslo-config
+BuildRequires: python%{pyver}-oslo-i18n
+BuildRequires: python%{pyver}-oslo-log
+BuildRequires: python%{pyver}-oslo-service
+BuildRequires: python%{pyver}-oslo-utils
+BuildRequires: python%{pyver}-oslotest
+BuildRequires: python%{pyver}-requests
+BuildRequires: python%{pyver}-six
+BuildRequires: python%{pyver}-testtools
 
 %description
 A common library to be used by various projects in the Ironic ecosystem
@@ -50,17 +63,17 @@ A common library to be used by various projects in the Ironic ecosystem
 %py_req_cleanup
 
 %build
-%{__python2} setup.py build
+%{pyver_build}
 
 %check
-%{__python2} setup.py test
+%{pyver_bin} setup.py test
 
 %install
-%{__python2} setup.py install -O1 --skip-build --root=%{buildroot}
+%{pyver_install}
 
 %files
 %license LICENSE
 %doc README.rst
-%{python2_sitelib}/*
+%{pyver_sitelib}/*
 
 %changelog
