@@ -4,7 +4,7 @@
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
 Name:           python-%{srcname}
-Version:        2.5.2
+Version:        2.5.4
 Release:        1%{?dist}
 Summary:        %{sum}
 
@@ -62,6 +62,9 @@ A common library to be used by various projects in the Ironic ecosystem
 %{python2_sitelib}/*
 
 %changelog
+* Fri Sep 28 2018 RDO <dev@lists.rdoproject.org> 2.5.4-1
+- Update to 2.5.4
+
 * Wed Feb 08 2017 Alfredo Moralejo <amoralej@redhat.com> 2.5.2-1
 - Update to 2.5.2
 
