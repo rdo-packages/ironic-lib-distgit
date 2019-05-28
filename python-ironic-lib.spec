@@ -47,6 +47,7 @@ Requires: python%{pyver}-oslo-utils >= 3.33.0
 Requires: python%{pyver}-pbr
 Requires: python%{pyver}-requests
 Requires: python%{pyver}-six
+Requires: python%{pyver}-zeroconf >= 0.19.1
 
 # These are requirements for unit testing
 BuildRequires: python%{pyver}-eventlet
@@ -60,6 +61,7 @@ BuildRequires: python%{pyver}-oslotest
 BuildRequires: python%{pyver}-requests
 BuildRequires: python%{pyver}-six
 BuildRequires: python%{pyver}-testtools
+BuildRequires: python%{pyver}-zeroconf
 
 %description -n python%{pyver}-%{srcname}
 A common library to be used by various projects in the Ironic ecosystem
@@ -72,10 +74,7 @@ A common library to be used by various projects in the Ironic ecosystem
 %{pyver_build}
 
 %check
-#(TODO) amoralej - unit tests are failing in fedora builder until
-# https://review.openstack.org/#/c/605645 is merged. Remove " || true"
-# once the patch is merged and include in a pinned tag.
-%{pyver_bin} setup.py test || true
+%{pyver_bin} setup.py test
 
 %install
 %{pyver_install}
