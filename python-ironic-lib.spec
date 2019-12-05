@@ -85,3 +85,4 @@ A common library to be used by various projects in the Ironic ecosystem
 %{pyver_sitelib}/*
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/ironic-lib/commit/?id=a5b257cd86b68ee128a7a9d7a8902d29878ba018
