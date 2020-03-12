@@ -79,9 +79,15 @@ A common library to be used by various projects in the Ironic ecosystem
 %install
 %{pyver_install}
 
+# rootwrap related files
+install -d -m 755 %{buildroot}%{_sysconfdir}/ironic
+install -d -m 755 %{buildroot}%{_sysconfdir}/ironic/rootwrap.d
+mv %{buildroot}/usr/etc/ironic/rootwrap.d/ironic-lib.filters %{buildroot}%{_sysconfdir}/ironic/rootwrap.d/
+
 %files -n python%{pyver}-%{srcname}
 %license LICENSE
 %doc README.rst
 %{pyver_sitelib}/*
+%config(noreplace) %attr(-, root, ironic) %{_sysconfdir}/ironic/rootwrap.d/ironic-lib.filters
 
 %changelog
