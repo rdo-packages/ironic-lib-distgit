@@ -16,7 +16,7 @@
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
 Name:           python-%{srcname}
-Version:        2.16.3
+Version:        2.16.4
 Release:        1%{?dist}
 Summary:        %{sum}
 
@@ -86,6 +86,9 @@ A common library to be used by various projects in the Ironic ecosystem
 %{pyver_sitelib}/*
 
 %changelog
+* Fri Mar 13 2020 RDO <dev@lists.rdoproject.org> 2.16.4-1
+- Update to 2.16.4
+
 * Fri Jun 07 2019 RDO <dev@lists.rdoproject.org> 2.16.3-1
 - Update to 2.16.3
 
