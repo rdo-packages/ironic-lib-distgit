@@ -1,15 +1,3 @@
-# Macros for py2/py3 compatibility
-%if 0%{?fedora} || 0%{?rhel} > 7
-%global pyver %{python3_pkgversion}
-%else
-%global pyver 2
-%endif
-
-%global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
-# End of macros for py2/py3 compatibility
 %{!?upstream_version: %global upstream_version %{version}}
 
 %global srcname ironic-lib
@@ -29,41 +17,40 @@ BuildArch:      noarch
 %description
 A common library to be used by various projects in the Ironic ecosystem
 
-%package -n     python%{pyver}-%{srcname}
+%package -n     python3-%{srcname}
 Summary:        %{sum}
-%{?python_provide:%python_provide python%{pyver}-%{srcname}}
+%{?python_provide:%python_provide python3-%{srcname}}
 
-BuildRequires:  python%{pyver}-devel
-BuildRequires:  python%{pyver}-pbr
-BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python3-devel
+BuildRequires:  python3-pbr
+BuildRequires:  python3-setuptools
 BuildRequires:  openstack-macros
-Requires: python%{pyver}-oslo-concurrency >= 3.26.0
-Requires: python%{pyver}-oslo-config >= 2:5.2.0
-Requires: python%{pyver}-oslo-i18n >= 3.15.3
-Requires: python%{pyver}-oslo-log >= 3.36.0
-Requires: python%{pyver}-oslo-serialization >= 2.18.0
-Requires: python%{pyver}-oslo-service >= 1.24.0
-Requires: python%{pyver}-oslo-utils >= 3.33.0
-Requires: python%{pyver}-pbr
-Requires: python%{pyver}-requests
-Requires: python%{pyver}-six
-Requires: python%{pyver}-zeroconf >= 0.19.1
+Requires: python3-oslo-concurrency >= 3.26.0
+Requires: python3-oslo-config >= 2:5.2.0
+Requires: python3-oslo-i18n >= 3.15.3
+Requires: python3-oslo-log >= 3.36.0
+Requires: python3-oslo-serialization >= 2.18.0
+Requires: python3-oslo-service >= 1.24.0
+Requires: python3-oslo-utils >= 3.33.0
+Requires: python3-pbr
+Requires: python3-requests
+Requires: python3-zeroconf >= 0.24.0
 
 # These are requirements for unit testing
-BuildRequires: python%{pyver}-eventlet
-BuildRequires: python%{pyver}-oslo-concurrency
-BuildRequires: python%{pyver}-oslo-config
-BuildRequires: python%{pyver}-oslo-i18n
-BuildRequires: python%{pyver}-oslo-log
-BuildRequires: python%{pyver}-oslo-service
-BuildRequires: python%{pyver}-oslo-utils
-BuildRequires: python%{pyver}-oslotest
-BuildRequires: python%{pyver}-requests
-BuildRequires: python%{pyver}-six
-BuildRequires: python%{pyver}-testtools
-BuildRequires: python%{pyver}-zeroconf
+BuildRequires: python3-eventlet
+BuildRequires: python3-oslo-concurrency
+BuildRequires: python3-oslo-config
+BuildRequires: python3-oslo-i18n
+BuildRequires: python3-oslo-log
+BuildRequires: python3-oslo-service
+BuildRequires: python3-oslo-utils
+BuildRequires: python3-oslotest
+BuildRequires: python3-requests
+BuildRequires: python3-six
+BuildRequires: python3-testtools
+BuildRequires: python3-zeroconf
 
-%description -n python%{pyver}-%{srcname}
+%description -n python3-%{srcname}
 A common library to be used by various projects in the Ironic ecosystem
 
 %prep
@@ -71,23 +58,23 @@ A common library to be used by various projects in the Ironic ecosystem
 %py_req_cleanup
 
 %build
-%{pyver_build}
+%{py3_build}
 
 %check
-%{pyver_bin} setup.py test
+python3 setup.py test
 
 %install
-%{pyver_install}
+%{py3_install}
 
 # rootwrap related files
 install -d -m 755 %{buildroot}%{_sysconfdir}/ironic
 install -d -m 755 %{buildroot}%{_sysconfdir}/ironic/rootwrap.d
 mv %{buildroot}/usr/etc/ironic/rootwrap.d/ironic-lib.filters %{buildroot}%{_sysconfdir}/ironic/rootwrap.d/
 
-%files -n python%{pyver}-%{srcname}
+%files -n python3-%{srcname}
 %license LICENSE
 %doc README.rst
-%{pyver_sitelib}/*
+%{python3_sitelib}/*
 %config(noreplace) %attr(-, root, ironic) %{_sysconfdir}/ironic/rootwrap.d/ironic-lib.filters
 
 %changelog
