@@ -4,8 +4,8 @@
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
 Name:           python-%{srcname}
-Version:        XXX
-Release:        XXX
+Version:        4.2.0
+Release:        1%{?dist}
 Summary:        %{sum}
 
 License:        ASL 2.0
@@ -78,3 +78,6 @@ mv %{buildroot}/usr/etc/ironic/rootwrap.d/ironic-lib.filters %{buildroot}%{_sysc
 %config(noreplace) %attr(-, root, ironic) %{_sysconfdir}/ironic/rootwrap.d/ironic-lib.filters
 
 %changelog
+* Mon Apr 27 2020 RDO <dev@lists.rdoproject.org> 4.2.0-1
+- Update to 4.2.0
+
