@@ -25,6 +25,7 @@ BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 BuildRequires:  openstack-macros
+Requires: python3-bcrypt >= 3.1.3
 Requires: python3-oslo-concurrency >= 3.26.0
 Requires: python3-oslo-config >= 2:5.2.0
 Requires: python3-oslo-i18n >= 3.15.3
@@ -37,6 +38,7 @@ Requires: python3-requests
 Requires: python3-zeroconf >= 0.24.0
 
 # These are requirements for unit testing
+BuildRequires: python3-bcrypt
 BuildRequires: python3-eventlet
 BuildRequires: python3-oslo-concurrency
 BuildRequires: python3-oslo-config
