@@ -37,6 +37,7 @@ BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
 BuildRequires:  python%{pyver}-setuptools
 BuildRequires:  openstack-macros
+Requires: python%{pyver}-bcrypt >= 3.1.3
 Requires: python%{pyver}-oslo-concurrency >= 3.26.0
 Requires: python%{pyver}-oslo-config >= 2:5.2.0
 Requires: python%{pyver}-oslo-i18n >= 3.15.3
@@ -50,6 +51,7 @@ Requires: python%{pyver}-six
 Requires: python%{pyver}-zeroconf >= 0.19.1
 
 # These are requirements for unit testing
+BuildRequires: python%{pyver}-bcrypt
 BuildRequires: python%{pyver}-eventlet
 BuildRequires: python%{pyver}-oslo-concurrency
 BuildRequires: python%{pyver}-oslo-config
