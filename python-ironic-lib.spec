@@ -21,10 +21,11 @@ A common library to be used by various projects in the Ironic ecosystem
 Summary:        %{sum}
 %{?python_provide:%python_provide python3-%{srcname}}
 
+BuildRequires:  openstack-macros
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
-BuildRequires:  openstack-macros
+
 Requires: python3-bcrypt >= 3.1.3
 Requires: python3-oslo-concurrency >= 3.26.0
 Requires: python3-oslo-config >= 2:5.2.0
@@ -33,8 +34,9 @@ Requires: python3-oslo-log >= 3.36.0
 Requires: python3-oslo-serialization >= 2.18.0
 Requires: python3-oslo-service >= 1.24.0
 Requires: python3-oslo-utils >= 3.33.0
-Requires: python3-pbr
-Requires: python3-requests
+Requires: python3-pbr >= 2.0.0
+Requires: python3-requests >= 2.14.2
+Requires: python3-webob >= 1.7.1
 Requires: python3-zeroconf >= 0.24.0
 
 # These are requirements for unit testing
@@ -48,8 +50,8 @@ BuildRequires: python3-oslo-service
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-oslotest
 BuildRequires: python3-requests
-BuildRequires: python3-six
 BuildRequires: python3-testtools
+BuildRequires: python3-webob
 BuildRequires: python3-zeroconf
 
 %description -n python3-%{srcname}
