@@ -36,6 +36,7 @@ Requires: python3-oslo-service >= 1.24.0
 Requires: python3-oslo-utils >= 3.33.0
 Requires: python3-pbr >= 2.0.0
 Requires: python3-requests >= 2.14.2
+Requires: python3-tenacity >= 6.2.0
 Requires: python3-webob >= 1.7.1
 Requires: python3-zeroconf >= 0.24.0
 
@@ -50,6 +51,7 @@ BuildRequires: python3-oslo-service
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-oslotest
 BuildRequires: python3-requests
+BuildRequires: python3-tenacity
 BuildRequires: python3-testtools
 BuildRequires: python3-webob
 BuildRequires: python3-zeroconf
