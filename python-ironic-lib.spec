@@ -32,7 +32,6 @@ Requires: python3-oslo-config >= 2:5.2.0
 Requires: python3-oslo-i18n >= 3.15.3
 Requires: python3-oslo-log >= 3.36.0
 Requires: python3-oslo-serialization >= 2.18.0
-Requires: python3-oslo-service >= 1.24.0
 Requires: python3-oslo-utils >= 3.33.0
 Requires: python3-pbr >= 2.0.0
 Requires: python3-requests >= 2.14.2
