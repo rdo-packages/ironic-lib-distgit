@@ -1,3 +1,5 @@
+%{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
+%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %{!?upstream_version: %global upstream_version %{version}}
 
 %global srcname ironic-lib
@@ -5,14 +7,25 @@
 
 Name:           python-%{srcname}
 Version:        4.4.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        %{sum}
 
 License:        ASL 2.0
 URL:            http://pypi.python.org/pypi/%{srcname}
 Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{version}.tar.gz
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+Source101:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{version}.tar.gz.asc
+Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
+%endif
 
 BuildArch:      noarch
+
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+BuildRequires:  /usr/bin/gpgv2
+BuildRequires:  openstack-macros
+%endif
 
 %description
 A common library to be used by various projects in the Ironic ecosystem
@@ -59,6 +72,10 @@ BuildRequires: python3-zeroconf
 A common library to be used by various projects in the Ironic ecosystem
 
 %prep
+# Required for tarball sources verification
+%if 0%{?sources_gpg} == 1
+%{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
+%endif
 %autosetup -n %{srcname}-%{upstream_version} -p1
 %py_req_cleanup
 
@@ -83,6 +100,9 @@ mv %{buildroot}/usr/etc/ironic/rootwrap.d/ironic-lib.filters %{buildroot}%{_sysc
 %config(noreplace) %attr(-, root, ironic) %{_sysconfdir}/ironic/rootwrap.d/ironic-lib.filters
 
 %changelog
+* Wed Oct 21 2020 Joel Capitao <jcapitao@redhat.com> 4.4.0-2
+- Enable sources tarball validation using GPG signature.
+
 * Fri Sep 18 2020 RDO <dev@lists.rdoproject.org> 4.4.0-1
 - Update to 4.4.0
 
