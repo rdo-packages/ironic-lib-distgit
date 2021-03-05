@@ -40,11 +40,12 @@ BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
 Requires: python3-bcrypt >= 3.1.3
+Requires: python3-keystoneauth1 >= 4.2.0
+Requires: python3-os-service-types >= 1.2.0
 Requires: python3-oslo-concurrency >= 3.26.0
 Requires: python3-oslo-config >= 2:5.2.0
 Requires: python3-oslo-i18n >= 3.15.3
 Requires: python3-oslo-log >= 3.36.0
-Requires: python3-oslo-serialization >= 2.18.0
 Requires: python3-oslo-utils >= 3.33.0
 Requires: python3-pbr >= 2.0.0
 Requires: python3-requests >= 2.14.2
@@ -55,10 +56,14 @@ Requires: python3-zeroconf >= 0.24.0
 # These are requirements for unit testing
 BuildRequires: python3-bcrypt
 BuildRequires: python3-eventlet
+BuildRequires: python3-keystoneauth1
+BuildRequires: python3-keystonemiddleware
+BuildRequires: python3-os-service-types
 BuildRequires: python3-oslo-concurrency
 BuildRequires: python3-oslo-config
 BuildRequires: python3-oslo-i18n
 BuildRequires: python3-oslo-log
+BuildRequires: python3-oslo-messaging
 BuildRequires: python3-oslo-service
 BuildRequires: python3-oslo-utils
 BuildRequires: python3-oslotest
