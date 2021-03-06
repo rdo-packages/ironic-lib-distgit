@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c668d617_aa6d89f5",
+        "filename": "python-ironic-lib.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2021-03-06T12:22:24Z",
+      "side": 1,
+      "message": "Used in https://opendev.org/openstack/ironic-lib/src/branch/master/ironic_lib/json_rpc/server.py#L34",
+      "revId": "24f3733e4e0c13a18bff4d3f7954ca83bcd32b2a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e975d1cc_9c3b5828",
+        "filename": "python-ironic-lib.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 78
+      },
+      "writtenOn": "2021-03-06T12:22:24Z",
+      "side": 1,
+      "message": "Ideally, keystonemiddleware and oslo-message should be Suggests as very weak dependencies.",
+      "revId": "24f3733e4e0c13a18bff4d3f7954ca83bcd32b2a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
