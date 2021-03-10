@@ -107,3 +107,4 @@ mv %{buildroot}/usr/etc/ironic/rootwrap.d/ironic-lib.filters %{buildroot}%{_sysc
 %config(noreplace) %attr(-, root, ironic) %{_sysconfdir}/ironic/rootwrap.d/ironic-lib.filters
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/ironic-lib/commit/41939c60d443add76e71e069557a486a9c37ddb4
