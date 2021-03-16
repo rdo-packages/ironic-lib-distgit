@@ -51,9 +51,11 @@ Requires: python3-tenacity >= 6.2.0
 Requires: python3-webob >= 1.7.1
 Requires: python3-zeroconf >= 0.24.0
 
+%if 0%{?fedora} || 0%{?rhel} > 7
 Recommends: python3-keystoneauth1 >= 4.2.0
 Recommends: python3-os-service-types >= 1.2.0
 Recommends: python3-oslo-service >= 1.24.0
+%endif
 
 # These are requirements for unit testing
 BuildRequires: python3-bcrypt
