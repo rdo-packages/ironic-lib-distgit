@@ -46,7 +46,6 @@ Requires: python3-oslo-i18n >= 3.15.3
 Requires: python3-oslo-log >= 3.36.0
 Requires: python3-oslo-utils >= 3.34.0
 Requires: python3-pbr >= 2.0.0
-Requires: python3-requests >= 2.14.2
 Requires: python3-tenacity >= 6.2.0
 Requires: python3-webob >= 1.7.1
 Requires: python3-zeroconf >= 0.24.0
