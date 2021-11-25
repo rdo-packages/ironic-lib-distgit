@@ -1,12 +1,12 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
+%global sources_gpg_sign 0x01527a34f0d0080f8a5db8d6eb6c5df21b4b6363
 %{!?upstream_version: %global upstream_version %{version}}
 
 %global srcname ironic-lib
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
 Name:           python-%{srcname}
-Version:        4.6.2
+Version:        4.6.3
 Release:        1%{?dist}
 Summary:        %{sum}
 
@@ -109,6 +109,9 @@ mv %{buildroot}/usr/etc/ironic/rootwrap.d/ironic-lib.filters %{buildroot}%{_sysc
 %config(noreplace) %attr(-, root, ironic) %{_sysconfdir}/ironic/rootwrap.d/ironic-lib.filters
 
 %changelog
+* Thu Nov 25 2021 RDO <dev@lists.rdoproject.org> 4.6.3-1
+- Update to 4.6.3
+
 * Tue Aug 31 2021 RDO <dev@lists.rdoproject.org> 4.6.2-1
 - Update to 4.6.2
 
