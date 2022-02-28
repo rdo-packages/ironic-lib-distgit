@@ -43,7 +43,6 @@ Requires: python3-bcrypt >= 3.1.3
 Requires: python3-oslo-concurrency >= 3.26.0
 Requires: python3-oslo-config >= 2:5.2.0
 Requires: python3-oslo-i18n >= 3.15.3
-Requires: python3-oslo-log >= 3.36.0
 Requires: python3-oslo-utils >= 3.34.0
 Requires: python3-pbr >= 2.0.0
 Requires: python3-tenacity >= 6.2.0
@@ -65,7 +64,6 @@ BuildRequires: python3-os-service-types
 BuildRequires: python3-oslo-concurrency
 BuildRequires: python3-oslo-config
 BuildRequires: python3-oslo-i18n
-BuildRequires: python3-oslo-log
 BuildRequires: python3-oslo-messaging
 BuildRequires: python3-oslo-service
 BuildRequires: python3-oslo-utils
