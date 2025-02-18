@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global sources_gpg_sign 0x22284f69d9eccdf3df7819791c711af193ff8e54
 %{!?upstream_version: %global upstream_version %{version}}
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
@@ -8,7 +8,7 @@
 %global sum A common library to be used by various projects in the Ironic ecosystem
 
 Name:           python-%{srcname}
-Version:        5.5.0
+Version:        5.5.1
 Release:        1%{?dist}
 Summary:        %{sum}
 
@@ -92,6 +92,9 @@ mv %{buildroot}/usr/etc/ironic/rootwrap.d/ironic-lib.filters %{buildroot}%{_sysc
 %config(noreplace) %attr(-, root, ironic) %{_sysconfdir}/ironic/rootwrap.d/ironic-lib.filters
 
 %changelog
+* Tue Feb 18 2025 RDO <dev@lists.rdoproject.org> 5.5.1-1
+- Update to 5.5.1
+
 * Mon Sep 04 2023 RDO <dev@lists.rdoproject.org> 5.5.0-1
 - Update to 5.5.0
 
