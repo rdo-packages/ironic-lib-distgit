@@ -1,6 +1,8 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
 %global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
 %{!?upstream_version: %global upstream_version %{version}}
+%{?dlrn: %global tarsources ironic-lib}
+%{!?dlrn: %global tarsources ironic_lib}
 # we are excluding some BRs from automatic generator
 %global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
 
@@ -14,10 +16,10 @@ Summary:        %{sum}
 
 License:        Apache-2.0
 URL:            http://pypi.python.org/pypi/%{srcname}
-Source0:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{version}.tar.gz
+Source0:        https://tarballs.openstack.org/%{srcname}/%{tarsources}-%{upstream_version}.tar.gz
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:        https://tarballs.openstack.org/%{srcname}/%{srcname}-%{version}.tar.gz.asc
+Source101:        https://tarballs.openstack.org/%{srcname}/%{tarsources}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 
@@ -53,7 +55,7 @@ A common library to be used by various projects in the Ironic ecosystem
 %if 0%{?sources_gpg} == 1
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
-%autosetup -n %{srcname}-%{upstream_version} -p1
+%autosetup -n %{tarsources}-%{upstream_version} -p1
 
 sed -i /.*-c{env:TOX_CONSTRAINTS_FILE.*/d tox.ini
 sed -i /^minversion.*/d tox.ini
